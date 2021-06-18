@@ -10,13 +10,6 @@ function Login() {
             <div className="login__google-apple-android">
                     <div className="login__google" >
                       <button onClick={() =>{
-                      auth.signInWithEmailAndPassword('abhaykvincent@gmail.com', '.Abhay.98')
-                      .then((result) => {
-                        console.log(result.user.toJSON())
-                      }).catch((error) => {
-                        console.log(error)
-                      });
-                    
                     }}>Google</button>
     
             </div>
