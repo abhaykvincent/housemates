@@ -12,6 +12,7 @@ function Login() {
                       <button onClick={() =>{
                       auth.signInWithEmailAndPassword('abhaykvincent@gmail.com', '.Abhay.98')
                       .then((result) => {
+<<<<<<< HEAD
                         /** @type {firebase.auth.OAuthCredential} */
                         var credential = result.credential;
                     
@@ -31,6 +32,11 @@ function Login() {
                         var credential = error.credential;
                         console.log(error)
                         // ...
+=======
+                        console.log(result.user.toJSON())
+                      }).catch((error) => {
+                        console.log(error)
+>>>>>>> parent of 890bbeb... Login -Clean up
                       });
                     
                     }}>Google</button>
