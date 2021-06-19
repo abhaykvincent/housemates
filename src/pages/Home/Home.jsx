@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 
+
+
 function Home() {
     const [user, setUser] = useState({
-        name: 'Abhay Vincent'
+        name: 'Abhay Vincent',
+        houseId: '..'
     })
+    let haveHome = user.houseId ? true : false
+    console.log(haveHome)
     const [house, setHouse] = useState({
         name: '1881 Dalhousie',
         members: [
@@ -22,9 +27,28 @@ function Home() {
             <div className="greetings">
                 <h2 className="hi-user">Hi {user.name}</h2>
             </div>
+            {
+                haveHome ?  <HousePanel house={house}/> : <JoinHome/>
+            }
+            
+        </div>
+    )
+}
+
+function JoinHome() {
+    return (
+        <div>
             <div className="create-new-house">
                 <button className="create-house">Create House</button>
             </div>
+        </div>
+    )
+}
+function HousePanel(props) {
+    const house = props.house
+    return (
+        <div>
+            
             <div className="home">
                 <div className="home-title">
                     <h2>{house.name}</h2>
@@ -46,5 +70,4 @@ function Home() {
         </div>
     )
 }
-
 export default Home
